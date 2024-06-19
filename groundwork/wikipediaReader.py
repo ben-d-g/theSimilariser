@@ -11,11 +11,8 @@ def readWikipediaPage(pageTitle):
     linkedPagesList = []
     lineList = getWikipediaHtml("https://en.wikipedia.org/wiki/" + pageTitle)
     for line in lineList:
-        #print(line)
-        #print("------------------------------------------")
+        #each line is the start of a wikipedia page's name. The name ends with the occurance of a '"'
         linkedPagesList.append(line[:line.find('"')])
-        #print(line[:line.find('"')])
-    linkedPagesList.sort()
     return linkedPagesList
 
 for item in readWikipediaPage("kilwinning"):
