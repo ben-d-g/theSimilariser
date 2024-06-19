@@ -7,6 +7,8 @@ def getHtml(urlString):
     """
     response = requests.get(urlString)
 
-    return response.text
+    #comment/uncomment the following as required
+    #return response.text #this returns html as a single string
+    return response.text.split("\n") #this returns html as a list of strings. Each string in the list is a single line of html
 
 print(getHtml("https://www.berkshirehathaway.com/"))
