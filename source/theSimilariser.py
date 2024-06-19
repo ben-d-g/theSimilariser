@@ -29,11 +29,9 @@ class Similariser:
                 returnString += "_"
             else:
                 returnString += char
-        print(returnString)
         return returnString
     
     def pagesLinkedFrom(self, urlString):
-        print(self.url1)
         linkedPagesList = []
         response = requests.get(urlString)
         for line in response.text.split('href="/wiki/'):
@@ -42,8 +40,8 @@ class Similariser:
         #print(linkedPagesList)
         return linkedPagesList
 
-    def calculateSimilarity(self):
+    def calculateSimilarityCoefficient(self):
         return (len(self.linkSet1.intersection(self.linkSet2))/len(self.linkSet1)) + (len(self.linkSet2.intersection(self.linkSet1))/len(self.linkSet2))
 
 firstTest = Similariser("kilwinning", "kilwinning abbey")
-print(firstTest.calculateSimilarity())
+print(firstTest.calculateSimilarityCoefficient())
