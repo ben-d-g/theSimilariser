@@ -35,6 +35,3 @@ class Similariser:
 
     def calculateSimilarityCoefficient(self):
         return (len(self.linkSet1.intersection(self.linkSet2))/len(self.linkSet1)) + (len(self.linkSet2.intersection(self.linkSet1))/len(self.linkSet2))
-
-firstTest = Similariser("kilwinning", "kilwinning abbey")
-print(firstTest.calculateSimilarityCoefficient())
