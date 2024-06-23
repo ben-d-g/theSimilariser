@@ -8,10 +8,10 @@ This works by comparing the links on the wikipedia page for the two things.
 Currently the coefficient of similarity is given by
 
 $$
-\frac{|A \cap B|}{|A|} + \frac{|A \cap B|}{|B|}
+\frac{ \log (|A \cap B|) }{ \log (|A|) } + \frac{ \log (|A \cap B|) }{ \log (|B|) }
 $$
 
-Where $A$ and $B$ are the sets of links on each page. I am not entirely happy with this. I feel that this should be weighted in some way - a page with a small number of links could have a bigger impact than we want.\
+Where $A$ and $B$ are the sets of links on each page. The log ratio is used so that the size of the page has little impact on the findings.\
 Also, perhaps we should use lists instead of sets, so if a page is repeated many times it has more of an impact.
 
 ## GUI

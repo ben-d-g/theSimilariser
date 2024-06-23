@@ -5,7 +5,7 @@ similariser = Similariser()
 
 def findSimilarity():
     similariser.updateTerms(term1.get(), term2.get())
-    output["text"] = "The similarity of these terms is: " + str(similariser.calculateSimilarityCoefficient())
+    output["text"] = "The similarity coefficient of these terms is: " + str(similariser.calculateSimilarityCoefficient()) + "%"
 
 root = tkinter.Tk()
 message = tkinter.Label(root, text = "Welcome to the Similariser. Please enter your terms.")
