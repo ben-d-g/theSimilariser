@@ -1,4 +1,5 @@
 import requests
+from math import log
 
 class Similariser:
     def __init__(self, term1 = "", term2 = ""):
@@ -34,4 +35,4 @@ class Similariser:
         return linkedPagesList
 
     def calculateSimilarityCoefficient(self):
-        return (len(self.linkSet1.intersection(self.linkSet2))/len(self.linkSet1)) + (len(self.linkSet2.intersection(self.linkSet1))/len(self.linkSet2))
+        return round(50*(log(len(self.linkSet1.intersection(self.linkSet2))) / log(len(self.linkSet1)) + log(len(self.linkSet2.intersection(self.linkSet1))) / log(len(self.linkSet2))))
